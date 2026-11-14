@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create account</title>
+  <link rel="stylesheet" href="/css/app.css">
+  <link rel="icon" href="data:,">
+</head>
+<body>
+  <main class="auth">
+    <div class="auth-card">
+      <div class="brand"><span class="logo" id="logo"></span><span id="org">Mentor Sessions</span></div>
+      <div class="card">
+        <h1>Create your account</h1>
+        <div id="closed" class="alert alert-info hidden" role="status">Registration is currently closed. Please ask your coordinator to create an account for you.</div>
+        <div id="error" class="alert alert-error hidden" role="alert"></div>
+        <div id="done" class="alert alert-success hidden" role="status">Account created. <a href="/login">Sign in</a> to book a session.</div>
+        <form id="form" novalidate>
+          <div class="field"><label for="name">Full name</label><input id="name" type="text" autocomplete="name" required maxlength="100"></div>
+          <div class="field"><label for="email">Email</label><input id="email" type="email" autocomplete="email" required></div>
+          <div class="row">
+            <div class="field"><label for="batch">Batch / group <span class="muted">(optional)</span></label><input id="batch" type="text" maxlength="60"></div>
+            <div class="field"><label for="phone">Phone <span class="muted">(optional)</span></label><input id="phone" type="text" autocomplete="tel" maxlength="30"></div>
+          </div>
+          <div class="field"><label for="password">Password</label><input id="password" type="password" autocomplete="new-password" required aria-describedby="pwh"><div class="help" id="pwh">At least 8 characters.</div></div>
+          <div class="field hidden" id="codeField"><label for="code">Invite code</label><input id="code" type="text" autocomplete="off"></div>
+          <button class="btn btn-primary btn-lg btn-block" id="submit" type="submit">Create account</button>
+        </form>
+        <p class="small muted mt">Already registered? <a href="/login">Sign in</a></p>
+      </div>
+    </div>
+  </main>
+  <script src="/js/common.js"></script>
+  <script src="/js/register.js"></script>
+</body>
+</html>
